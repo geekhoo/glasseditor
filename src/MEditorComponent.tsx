@@ -20,14 +20,15 @@ const EditorComponent: React.FC<GrapeJSComponentProps> = ({ id, html, css }) => 
               .then(content => setHtmlContent(content))
               .catch(error => console.error(error));
           }, []);
-
+  // eslint-disable-next-line react-hooks/exhaustive-deps
     const [cssContent, setCssContent] = useState('');
 
           useEffect(() => {
             // Fetch the HTML file content
+            // eslint-disable-next-line react-hooks/exhaustive-deps
             fetch('./style.css')
               .then(response => response.text())
-              .then(content => setCssContent(cssContent))
+              .then(content => setCssContent(content))
               .catch(error => console.error(error));
           }, []);
 
